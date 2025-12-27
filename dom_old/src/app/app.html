@@ -1,0 +1,73 @@
+<h2>Usando Bindings basico no DOM:</h2>
+<br />
+dom  titulo
+"Droga não consegui  o {{" titulo \"}}"
+<br />
+dom {{ titulo }}
+
+<h2>Capturando o Input sem ngModel :</h2>
+<p>Input com botão com click:</p>
+<input 
+  type="text"
+  #campoNome
+  placeholder="Seu nome">
+<button (click)="processarInputNome(campoNome.value)">
+  Processar Nome
+</button>
+
+<p>Input com change:</p>
+<input 
+  type="text"
+  (change)="processarInputNome($event.target.value)"
+  placeholder="Seu nome">
+
+<p>Resultado: {{ menssagem }}</p>
+
+<h2>Mostrando e escondendo com Angular :</h2>
+
+<p>usando: "ngIf":</p>
+
+<div *ngIf="true">
+  Basico do funcionamento!!! 
+</div>
+<div *ngIf="false">
+  Basico Não do funcionamento!!! 
+</div>
+
+<p>usando: @"if" VERSÃO NOVA:</p>
+
+@if(true){
+  Basico do funcionamento!!! 
+} @else {
+  Basico Não do funcionamento!!! 
+}
+
+<h2>Interando com angular</h2>
+<p>Usando ngFor:</p>
+<ul *ngFor="let item of listNomes; let i = index;">
+  <li>
+    <label>
+        <input type="checkbox">
+        {{ i + 1 }} {{ item }}
+    </label>
+  </li>
+</ul>
+<p>Usando @"ngFor":</p>
+<ul>
+  @for(item of listNomes; track item; let i = $index){
+    <li>
+      <label>
+          <input type="checkbox">
+          {{ i + 1 }} {{ item }}
+      </label>
+    </li>
+  } @empty {
+    <li>Nenhum nome encontrado.</li>
+  }
+</ul>
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+.verde{
+    background: green;
+    color: white;
+    display: block;
+}
+.sucesso{
+    background: #2d2;
+}
+.falha{
+    background: rgb(221, 40, 34);
+}
+.borda-colorida{
+    border: solid 2px blue;
+}
+

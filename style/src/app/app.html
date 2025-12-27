@@ -1,0 +1,27 @@
+<h1>Manipulação de CSS </h1>
+
+<h2>Usando Class Binding </h2>
+<div [class.verde]="isVerde">
+    Esta verde??
+</div>
+
+<h2>Usando Style Binding</h2>
+<button 
+    [style.background-color]="btnColor"
+    [style.font-size.em]="btnFont">
+    Botão vermelho
+    tamanho 2em
+</button>
+
+<h2>Usando diretiva ngClass e ng Style</h2>
+<div [ngClass]="{ 'sucesso': status === 'ok', 'erro': status === 'falha' }">
+    Mensagem de Status
+</div>
+
+<h2>Usando Renderer2</h2>
+<button (click)="customizarCard()"> Alterar Cores </button>
+<br />
+<div #meuCard>
+    Conteudo do card
+</div>
+
