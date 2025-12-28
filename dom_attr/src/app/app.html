@@ -1,0 +1,38 @@
+<h1>Manipulação de Atributos</h1>
+
+<h3>Usando o [attr.*] </h3>
+<p>tabela</p>
+<table>
+  <thead>
+    <tr>
+        <th [attr.colspan]="quantidadeColunas">coluna 1</th>
+        <th>coluna 2</th>
+        <th>coluna 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td [attr.colspan]="quantidadeColunas">Celula Expandida</td>
+      <td >Celula</td>
+      <td >Celula</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Usando o [property] </h3>
+<p>[disabled] e [src]</p>
+<br/>
+<button [disabled]="!btnEnable">Enviar Disabled</button>
+<br/>
+<p>{{ urlImagem }}</p>
+
+<img [src]="urlImagem" alt="foto randomica">
+
+<br/>
+
+<h3>Usando o renderer2 </h3>
+<p>renderer.setAtribute e renderer.getAtribute</p>
+
+<button (click)="alterarAtributo()"> Alterar atributos </button>
+
+<div #conteudo >conteudo</div>

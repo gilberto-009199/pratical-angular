@@ -1,0 +1,31 @@
+<h1>Animações</h1>
+
+
+<h2>Simples Transição com Atributos</h2>
+<p> É possivel usar animate.enter e animate.*</p>
+<h3>animate.enter</h3>
+<div animate.enter="enter-animation">
+  <p>Entrando</p>
+</div>
+
+<h3>animate.leave</h3>
+<button (click)="startLeave()">Iniciar leaving</button>
+
+@if ( isLeave() ) {
+  <div class="leave-container" animate.leave="leave-animation">
+    <p>Saindo</p>
+  </div>
+}
+
+
+<h2>Mouse: </h2>
+
+<div style="width: 100vw; height: 512px;" (click)="moverPara($event)">
+  <p>Clique em qualquer lugar para mover o quadrado</p>
+  <div #quadrado style="background: red; width: 32px; height: 32px; position: absolute;"></div>
+</div>
+
+
+
+
+
