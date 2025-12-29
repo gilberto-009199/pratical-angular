@@ -1,0 +1,80 @@
+<h1>Formularios e validações</h1>
+
+<h2>Formularios com validações</h2>
+<form [formGroup]="formulariosWithValidation">
+  <input type="text" formControlName="nome"  placeholder="nome"><br />
+  <input type="text" formControlName="telefone" placeholder="telefone"><br />
+  <input type="text" formControlName="email" placeholder="email"><br />
+  <input type="submit" [disabled]="formulariosWithValidation.invalid">
+</form>
+
+
+<h2>Formularios com validações e erros</h2>
+<form [formGroup]="formulariosWithValidationWithErrors">
+  <input type="text" formControlName="nome" placeholder="nome"><br />
+  @if (formulariosWithValidationWithErrors.get('nome')?.touched && formulariosWithValidationWithErrors.get('nome')?.hasError('required')) {
+    <p>O nome é obrigatório.</p>
+  }
+  @if (formulariosWithValidationWithErrors.get('nome')?.touched && formulariosWithValidationWithErrors.get('nome')?.hasError('minlength')) {
+    <p>Mínimo de 3 caracteres.</p>
+  }
+
+  <input type="text" formControlName="telefone" placeholder="telefone"><br />
+  @if (formulariosWithValidationWithErrors.get('telefone')?.touched && formulariosWithValidationWithErrors.get('telefone')?.hasError('pattern')) {
+    <p>Mínimo de 3 caracteres.</p>
+  }
+
+  <input type="text" formControlName="email" placeholder="email"><br />
+  @if (formulariosWithValidationWithErrors.get('email')?.touched && formulariosWithValidationWithErrors.get('email')?.hasError('required')) {
+    <p>O Email é obrigatório.</p>
+  }
+  @if (formulariosWithValidationWithErrors.get('email')?.touched && formulariosWithValidationWithErrors.get('email')?.hasError('email')) {
+    <p>Email invalido.</p>
+  }
+
+  <input type="submit" [disabled]="formulariosWithValidationWithErrors.invalid">
+</form>
+
+
+<h2>Formularios com validações e erros custumizados</h2>
+<form [formGroup]="formulariosWithValidationWithErrorsCustom">
+  <input type="text" formControlName="nome" placeholder="nome"><br />
+  @if (formulariosWithValidationWithErrorsCustom.get('nome')?.touched && formulariosWithValidationWithErrorsCustom.get('nome')?.hasError('required')) {
+    <p>O nome é obrigatório.</p>
+  }
+  @if (formulariosWithValidationWithErrorsCustom.get('nome')?.touched && formulariosWithValidationWithErrorsCustom.get('nome')?.hasError('minlength')) {
+    <p>Mínimo de 3 caracteres.</p>
+  }
+
+  <input type="text" formControlName="telefone" placeholder="telefone"><br />
+  @if (formulariosWithValidationWithErrorsCustom.get('telefone')?.touched && formulariosWithValidationWithErrorsCustom.get('telefone')?.hasError('pattern')) {
+    <p>Mínimo de 3 caracteres.</p>
+  }
+
+  <input type="text" formControlName="email" placeholder="email"><br />
+  @if (formulariosWithValidationWithErrorsCustom.get('email')?.touched && formulariosWithValidationWithErrorsCustom.get('email')?.hasError('required')) {
+    <p>O Email é obrigatório.</p>
+  }
+  @if (formulariosWithValidationWithErrorsCustom.get('email')?.touched && formulariosWithValidationWithErrorsCustom.get('email')?.hasError('email')) {
+    <p>Email invalido.</p>
+  }
+  
+  <input type="password" formControlName="password" placeholder="password"><br />
+  @if (formulariosWithValidationWithErrorsCustom.get('password')?.touched && formulariosWithValidationWithErrorsCustom.get('password')?.hasError('passwordStrength')) {
+    <p>Senha Fraca.</p>
+    @if (formulariosWithValidationWithErrorsCustom.get('password')?.hasError('noLetters')) {
+      <p>+ Sem letras.</p>
+    }
+    @if (formulariosWithValidationWithErrorsCustom.get('password')?.hasError('noNumber')) {
+      <p>+ Sem Numero.</p>
+    }
+  }
+
+  <input type="confirm-password" formControlName="confirm-password" placeholder="confirm password"><br />
+  @if (formulariosWithValidationWithErrorsCustom.get('confirm-password')?.touched && formulariosWithValidationWithErrorsCustom.get('confirm-password')?.hasError('passwordMismatch')) {
+    <p>As senhas não conferem.</p>
+  }
+
+  <input type="submit" [disabled]="formulariosWithValidationWithErrorsCustom.invalid">
+</form>
+

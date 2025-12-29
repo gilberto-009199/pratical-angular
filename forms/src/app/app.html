@@ -1,0 +1,33 @@
+<h1>Forms</h1>
+
+<h3>Typed Forms</h3>
+<p>Garante Tipos usa formGroup</p>
+<form [formGroup]="formulario0" (ngSubmit)="submeter0()">
+    <input formControlName="nome" placeholder="Nome">
+    <br/>
+    <input formControlName="telefone" type="number" placeholder="Telefone">
+    <br/>
+    <input type="submit" value="Submeter">
+</form>
+
+
+<h3>Reactive Forms</h3>
+<p></p>
+<form [formGroup]="formulario1" (ngSubmit)="submeter1()">
+    <input formControlName="nome" placeholder="Nome">
+    <br/>
+    <input formControlName="telefone" type="number" placeholder="Telefone">
+    <br/>
+    <input type="submit" value="Submeter" [disabled]="formulario1.invalid">
+</form>
+
+
+<h3>Signal with form</h3>
+<p></p>
+<textarea [formControl]="formulario2" placeholder="Escreva algo..."></textarea>
+  
+<p>Sua mensagem: {{ texto() }}</p>
+<p [style.color]="restante() < 10 ? 'red' : 'black'">
+    Caracteres restantes: {{ restante() }}
+</p>
+
