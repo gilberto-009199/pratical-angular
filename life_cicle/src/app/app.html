@@ -1,0 +1,11 @@
+<h1>Life Cicle</h1>
+<p>ngOnChanges, ngOnInit e ngOnDestroy</p>
+<button (click)="alterarConteudo()">Definir Data</button>
+<button (click)="destruirObjeto()">
+  {{ mostrarObjeto ? 'Destruir objeto' : 'Mostrar objeto' }} 
+</button>
+@if (mostrarObjeto){
+  <app-filho 
+    [data]="data()"
+  />
+}

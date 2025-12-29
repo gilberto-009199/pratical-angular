@@ -1,0 +1,13 @@
+<fieldset>
+    <legend>Filho</legend>
+    <p>
+        Usando output():
+        <button (click)="contador.emit(1)">FIlho para pai +1</button>
+        <button (click)="contador.emit(10)">FIlho para pai +10</button>
+    </p>
+    <p>
+        Usando @output():
+        <button (click)="contador2.emit(1)">FIlho para pai +1</button>
+        <button (click)="contador2.emit(10)">FIlho para pai +10</button>
+    </p>
+</fieldset>

@@ -1,0 +1,18 @@
+Calculadora IMC:
+<fieldset>
+    <label>Altura em metros</label>
+    <input type="text" [value]="altura()" (change)="altura.set($any($event.target).value)">
+    <br>
+    <label>Peso em KG</label>
+    <input type="text" [value]="peso()" (change)="peso.set($any($event.target).value )">
+    <br>
+    <label>idade</label>
+    <input type="text" [value]="idade()" (change)="idade.set($any($event.target).value )">
+    <br>
+    <p>IMC: {{  imc() }}</p>
+    <p>TMB: {{  tmb() }}</p>
+</fieldset>
+<app-imc-feedback 
+    [imc]="imc()"
+    [tmb]="tmb()"
+/>

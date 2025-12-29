@@ -1,0 +1,9 @@
+<fieldset>
+    <legend>Pai</legend>
+    <p>Total de Number: {{ cliques() }}</p>
+    <app-filho-component 
+        (contador)="updateCliques($event)"
+        (contador2)="updateCliques($event)"
+    />
+
+</fieldset>

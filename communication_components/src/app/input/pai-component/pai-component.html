@@ -1,0 +1,15 @@
+<fieldset style="border: solid 1px black; display: block;">
+    <legend>Pai</legend>
+    <label>Com input generica:</label>
+    <input type="text" [value]="mensagemEnviada()" (change)="mensagemEnviada.set($event.target.value)">
+    <br>
+    <label>Com @input decorator:</label>
+    <input type="text" [value]="mensagemEnviadaPorDecorator()" (change)="mensagemEnviadaPorDecorator.set($event.target.value)">
+    <app-filho-component 
+        [menssagem]="mensagemEnviada()" 
+        [menssagemPorDecorator]="mensagemEnviadaPorDecorator()"
+    />
+    <p>
+        Use input string ("Valor default") no filho
+    </p>
+</fieldset>

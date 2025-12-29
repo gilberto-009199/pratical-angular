@@ -1,0 +1,9 @@
+<fieldset>
+    <legend>Pai model</legend>
+    <p>
+        <input type="text" (input)="texto.set($event.target.value)">
+        <button (click)="mudarTexto()">Enviar alteração</button>
+    </p>
+    <p>Dado trocado: {{ dadoTrocado() }}</p>
+    <app-filho-component [(dadoTrocado)]="dadoTrocado" />
+</fieldset>
