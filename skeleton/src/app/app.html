@@ -1,0 +1,19 @@
+<h1>Skeleton</h1>
+<h3>Defer e Placeholder</h3>
+<p>Usando @ defer e @ placeholder do angular 17+</p>
+@defer (on timer(1s)) {
+  <app-lista-produtos />
+} @placeholder {
+  <div class="skeleton-card shimmer">
+  </div>
+}
+
+<h3></h3>
+<p>Usando ngtemplate e isLoading</p>
+<div *ngIf="!isLoading">
+  <app-lista-produtos />
+</div>
+<div *ngIf="isLoading">
+  <div class="skeleton-card shimmer">
+  </div>
+</div>

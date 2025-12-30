@@ -1,0 +1,23 @@
+.card{
+    display: block;
+    min-width: 128px;
+    width: auto;
+    border: solid 1px black;
+}
+.card-header{
+    padding: 2px 8px;
+    background-color: #eee;
+    display: block;
+}
+.card-body{
+    background-color: white;
+    display: block;
+}
+.card-footer{
+    background-color: rgb(146, 146, 146);
+    display: block;
+}
+.card-footer > * {
+    margin: 8px 3px;
+    
+}

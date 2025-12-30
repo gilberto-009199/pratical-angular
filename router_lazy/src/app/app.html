@@ -1,0 +1,16 @@
+<h1>Router</h1>
+
+<a routerLink="/usuarios">Pagina Usuarios</a>
+<br />
+<a routerLink="/produtos">Pagina Produtos</a>
+<br />
+<a [routerLink]="['/usuarios']">Pagina Usuarios ['/usuarios']</a>
+<br />
+<a [routerLink]="['/produtos']">Pagina Produtos ['/produtos']</a>
+<br />
+<button (click)="irParaUsuario()">ir Usuarios</button>
+<br />
+<button (click)="irParaProdutos()">ir Produtos</button>
+<br />
+<router-outlet />
+

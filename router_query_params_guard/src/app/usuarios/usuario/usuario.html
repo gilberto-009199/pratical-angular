@@ -1,0 +1,11 @@
+<p>usuario works!</p>
+<form [formGroup]="frmUsuario">
+    <label for="nome">Nome:</label>
+    <input type="text" formControlName="nome">
+    <br />
+    <label for="sobrenome">Sobrenome:</label>
+    <input type="text" formControlName="sobrenome">
+    <br />
+    <button (click)="salvar()">Salvar</button>
+</form>
+

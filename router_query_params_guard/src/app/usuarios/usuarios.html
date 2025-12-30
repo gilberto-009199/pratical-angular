@@ -1,0 +1,30 @@
+<table border="solid 1px black">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Sobre Nome</td>
+            <td>Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @for(item of usuariosService.usuarios(); track item; let i = $index){
+            <tr>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.sobrenome }}</td>
+                <td>
+                    <a 
+                        [routerLink]="['/usuarios/', i]"
+                        [queryParams]="item"
+                        >
+                        Editar
+                    </a>
+                </td>
+            </tr>
+          } @empty {
+            <tr>
+                <td colspan="3"> Sem Dados</td>
+            </tr>
+          }
+    </tbody>
+</table>

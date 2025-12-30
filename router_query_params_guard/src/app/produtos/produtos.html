@@ -1,0 +1,31 @@
+<p>
+    <label>Pesquise: </label>
+    <br />
+    <input type="text" placeholder="Pesquise" #inputSearch>
+    <button (click)="filtrar()">Pesquisar</button>
+</p>
+
+<table border="solid 1px black">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Preço</td>
+            <td>Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of listProdutos(); track item.id; let i = $index){
+            <tr>
+                <td>{{ item.nome }}</td>
+                <td>R$ {{ item.preco }}</td>
+                <td>
+                    <a [routerLink]="['/produtos/', item.id]">Editar</a>
+                </td>
+            </tr>
+          } @empty {
+            <tr>
+                <td colspan="3"> Sem Dados</td>
+            </tr>
+          }
+    </tbody>
+</table>

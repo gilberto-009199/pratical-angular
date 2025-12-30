@@ -1,0 +1,93 @@
+<h1>Criando Componentes reutilizaveis e exemplo de uso do ng-template</h1>
+
+
+<h3> Criando compoenentes reutilizaveis com ng-content</h3>
+<app-card>
+    <div class="header">
+      <h2>Título do Produto</h2>
+    </div>
+    <div class="body">
+        <p>Esta é a descrição detalhada que aparecerá no corpo do card.</p>
+    </div>
+    <div class="footer">
+        <button>Comprar Agora</button>
+    </div>
+</app-card>
+
+<br />
+
+<app-card>
+  
+    <h2>Título do Produto</h2>
+    <p>Esta é a descrição detalhada que aparecerá no corpo do card.</p>
+    <button>Comprar Agora</button>
+  
+</app-card>
+
+<br />
+
+<app-card>
+  <div header>
+    <h2>Título do Produto</h2>
+  </div>
+  <div body>
+      <p>Esta é a descrição detalhada que aparecerá no corpo do card.</p>
+  </div>
+  <div footer>
+      <button>Comprar Agora</button>
+  </div>
+</app-card>
+
+<br />
+
+<h2>Exemplos: ng-container vs ng-template</h2>
+
+<hr>
+
+<section>
+  <h3>1. ng-container (Lógica sem sujeira)</h3>
+  <ul>
+    <ng-container *ngFor="let i of [1,2,3]">
+      <li *ngIf="i % 2 !== 0">Item Ímpar: {{ i }}</li>
+    </ng-container>
+  </ul>
+</section>
+
+<hr>
+
+<section>
+  <h3>2. ng-template (O conteúdo "Else")</h3>
+  <div *ngIf="estaCarregando(); else conteudoPronto">
+    <p>Carregando dados...</p>
+  </div>
+
+  <ng-template #conteudoPronto>
+    <div class="alerta-sucesso">
+      ✅ Dados carregados com sucesso!
+    </div>
+  </ng-template>
+</section>
+
+<hr>
+
+<section>
+  <h3>3. ng-template + ng-container (Carimbo Dinâmico)</h3>
+  
+  <ng-container 
+    *ngTemplateOutlet="moldeUsuario; context: { nome: 'Felipe', cargo: 'Dev' }">
+  </ng-container>
+
+  <ng-container 
+    *ngTemplateOutlet="moldeUsuario; context: { nome: 'Maria', cargo: 'Design' }">
+  </ng-container>
+
+  <ng-template #moldeUsuario let-n="nome" let-c="cargo">
+    <div class="card-usuario">
+      <strong>Nome:</strong> {{ n }} <br>
+      <small>Cargo: {{ c }}</small>
+    </div>
+  </ng-template>
+</section>
+
+
+

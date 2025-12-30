@@ -1,0 +1,10 @@
+<form [formGroup]="frmProduto">
+    <label for="nome">Nome:</label>
+    <input type="text" formControlName="nome">
+    <br />
+    <label for="preco">Preco:</label>
+    <input type="text" formControlName="preco">
+    <br />
+    <button (click)="salvar()">Salvar</button>
+</form>
+
