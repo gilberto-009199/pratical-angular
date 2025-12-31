@@ -1,0 +1,72 @@
+<h1>Pipes</h1>
+<h2>Formatar textos</h2>
+
+Texto Original:
+<p>{{ 'eSsE e O TeXtO OrIgInAl' }}</p>
+
+
+Texto <strong>uppercase</strong> pipe:
+<p>{{ 'eSsE e O TeXtO OrIgInAl' | uppercase }}</p>
+
+Texto <strong>lowercase</strong> pipe:
+<p>{{ 'eSsE e O TeXtO OrIgInAl' | lowercase }}</p>
+
+Texto <strong>titlecase</strong> pipe:
+<p>{{ 'eSsE e O TeXtO OrIgInAl' | titlecase }}</p>
+
+<hr />
+
+<h2>Formatar Datas</h2>
+
+Data Hora original:
+<p> {{ hoje }} </p>
+
+Data Hora com <strong>date</strong>:
+<p> {{ hoje | date }} </p>
+
+
+Data Hora com <strong>date:'dd/MM/yyyy'</strong>:
+<p> {{ hoje | date:'dd/MM/yyyy' }} </p>
+
+<hr />
+
+<h2>Formatar Numeros e Moedas</h2>
+
+Numero original:
+<p>{{ numero }}</p>
+
+Numero com <strong>number:'1.1-1'</strong>:
+<p>{{ numero | number:'1.1-1' }}</p>
+
+
+Numero com <strong>number:'1.1-2'</strong>:
+<p>{{ numero | number:'1.1-2' }}</p>
+
+
+Numero com <strong>currency:'BR'</strong>:
+<p>{{ numero | currency:'BRL' }}</p>
+
+Numero com <strong>currency:'BR':'code'</strong>:
+<p>{{ numero | currency:'BRL':'code' }}</p>
+
+Numero com <strong>currency:'BRL':'symbol':'1.2-2'</strong>:
+<p>{{ numero | currency:'BRL':'symbol':'1.2-2' }}</p>
+
+<hr />
+
+<h2>Formatar Com Pipes Custumizados</h2>
+<p> Pipes podem ser puros ou não, se forem pure:false, então eles iram rerenderizar acada nova alteração no dom, tendo menos performace </p>
+
+<button (click)="translateService.setLanguage('en')">Alterar para Ingles</button>
+<button (click)="translateService.setLanguage('pt')">Alterar para Portugues</button>
+
+<br />
+<br />
+
+I18n:
+<p>{{  'login.username.label' | translate }}</p>
+
+I18n Bem-vindo com args:
+<p>{{  'home.welcome' | translate: 'Claudio' }}</p>
+
+
