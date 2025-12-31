@@ -1,14 +1,51 @@
 <h1>Diretivas Estruturais e Atributos</h1>
 
 <h2>Estrutural:</h2>
-<p></p>
+<p>Elas manipulam a existência dos elementos no DOM. Sempre usam o caractere "*"</p>
+<p>Exemplos mais comuns: *ngIf E *ngFor</p>
 
+<button>Definir como admin</button>
+<br />
+<button>Definir como usuario</button>
+<br />
+<button>Definir como anonimo</button>
+
+<br /><br />
+
+<label>*HasRole('ADMIN') como Diretiva Estrutural:</label>
+<div>
+    <label>Editar Usuarios</label>
+</div>
+
+<br />
+
+<label>*HasRole('USER') como Diretiva Estrutural:</label>
+<div>
+    <label>Editar Usuarios</label>
+</div>
+
+<br />
+
+<label>Sem *HasRole como Diretiva Estrutural:</label>
+<div>
+    <label>Logar?</label>
+</div>
 
 <hr />
 
 
 <h2>Atributos:</h2>
-<p></p>
+<p>Elas alteram o comportamento ou a aparência de um elemento que já existe.</p>
 
+<label>Upper case com diretiva</label>
+<input type="text" appUppercase />
 
+<br />
 
+<label>Anti KKK com diretiva</label>
+<input type="text" appAntkkk />
+
+<br />
+
+<label>telefone com diretiva</label>
+<input type="tel" appTelefone />
