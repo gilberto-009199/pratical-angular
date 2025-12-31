@@ -35,16 +35,18 @@
 + [criação de componentes reutilizaveis e ng-templates](create_component_ng_templates) - ng-template, ng-content e ng-container
 + [Usando os Pipes comuns e Custumizando](pipes) - Pipes uppercase, lowercase, titlecase, date, money, i18n, currency, async e custom pipes
 + [Diretivas](diretivas) - Diretiva Estrutural e de Atributo.
++ [Enviroments](enviroments)
 
-+ [Enviroments](enviroments) - 
-+ Modules
++ [Modules](modules) - 
 + Reatividade com rxjs
 + Services external com httpmodule
 + Services external com Axios
 + Services external com GraphQL
 + Loader para lazy loader 
++ Logging
 + Angular Universal com SSE
 + Angular Universal com SSG
++ Angular Universal com hibrid SSG+SSE+SPA
 + Angular CLI
 + Testes de interface
 + Testes de integração

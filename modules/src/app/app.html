@@ -1,0 +1,66 @@
+<h1>Modules: </h1>
+<p>Os modules como vc bme se elmbra são apra segmentar os recursos</p>
+<p>Eles possuem 4 carascteristicas:</p>
+
+<ul> 
+  <li><strong>declarations:</strong> É onde você lista os <b>componentes, diretivas e pipes</b> que pertencem exclusivamente a este módulo.</li>
+  <li><strong>imports:</strong> É onde você traz <b>outros módulos</b> cujas funcionalidades você deseja utilizar (ex: CommonModule para usar diretivas como o *ngIf).</li>
+  <li><strong>providers:</strong> É onde você declara os <b>serviços</b> que ficarão disponíveis para os componentes deste módulo.</li>
+  <li><strong>bootstrap:</strong> É o "ponto de partida". Define qual <b>componente principal</b> será carregado primeiro quando o módulo for iniciado (geralmente usado apenas no módulo raiz, o AppModule).</li>
+</ul>
+
+<p>Exemplo:</p>
+<textarea disabled style="width: 100%; height: 412px; display: block;" >
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Importante para diretivas básicas
+import { PerfilComponent } from './perfil/perfil.component';
+import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+
+@NgModule({
+  declarations: [
+    PerfilComponent,
+    EditarPerfilComponent
+  ],
+  imports: [
+    CommonModule // Necessário para usar ngIf, ngFor, etc.
+  ],
+  exports: [
+    PerfilComponent // Exportamos apenas o Perfil para ser usado fora deste módulo
+  ]
+})
+export class UsuarioModule {}
+</textarea>
+
+<h2>Vamos criar um exemplo</h2>
+<p>Baseado nos setores de um empresa, Vendas e TI</p>
+<pre>
+$  ng g m vendas
+  CREATE src/app/vendas/vendas-module.ts (192 bytes)
+
+$  ng g m ti
+  CREATE src/app/ti/ti-module.ts (188 bytes)
+
+$  ng g m logistica
+  CREATE src/app/logistica/logistica-module.ts (195 bytes)
+</pre>
+
+<h3>Vendas</h3>
+
+<app-catalogo-component></app-catalogo-component>
+
+<hr />
+
+<h3>TI</h3>
+
+<app-sistem-logistico-component />
+
+
+<hr />
+
+
+
+<h3>Logisticas</h3>
+
+<app-estoque-component />
+
+<hr />
