@@ -4,32 +4,37 @@
 <p>Elas manipulam a existência dos elementos no DOM. Sempre usam o caractere "*"</p>
 <p>Exemplos mais comuns: *ngIf E *ngFor</p>
 
-<button>Definir como admin</button>
-<br />
-<button>Definir como usuario</button>
-<br />
-<button>Definir como anonimo</button>
+<button (click)="setUsuarioADMIN()">Definir como admin</button>
+<br>
+
+<button (click)="setUsuarioComum()">Definir como usuario</button>
+
+<br>
+
+<button (click)="resetUsuario()">Resetar Usuario</button>
 
 <br /><br />
 
-<label>*HasRole('ADMIN') como Diretiva Estrutural:</label>
-<div>
-    <label>Editar Usuarios</label>
+<label>*HasRole='ADMIN' como Diretiva Estrutural:</label>
+<div *appHasRole="'ADMIN'">
+    <label>Função Gerencial: Editar Usuarios</label>
 </div>
 
-<br />
+<br /><br />
 
 <label>*HasRole('USER') como Diretiva Estrutural:</label>
-<div>
-    <label>Editar Usuarios</label>
+<div *appHasRole="'USER'">
+    <label>Função para Usuarios Comuns</label>
 </div>
 
-<br />
+<br /><br />
 
 <label>Sem *HasRole como Diretiva Estrutural:</label>
 <div>
     <label>Logar?</label>
 </div>
+
+<br /><br />
 
 <hr />
 
