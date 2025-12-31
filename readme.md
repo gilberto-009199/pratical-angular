@@ -36,7 +36,7 @@
 + [Usando os Pipes comuns e Custumizando](pipes) - Pipes uppercase, lowercase, titlecase, date, money, i18n, currency, async e custom pipes
 + [Diretivas](diretivas) - Diretiva Estrutural e de Atributo.
 
-+ Enviroments
++ [Enviroments](enviroments) - 
 + Modules
 + Reatividade com rxjs
 + Services external com httpmodule
