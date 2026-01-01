@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogoComponent } from './catalogo-component/catalogo-component';
+import { CatalogoService } from './catalogo-service';
+import { TiModule } from '../ti/ti-module';
 
 
 
@@ -9,7 +11,11 @@ import { CatalogoComponent } from './catalogo-component/catalogo-component';
     CatalogoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TiModule
+  ],
+  providers:[
+    CatalogoService
   ],
   exports:[
     CatalogoComponent
